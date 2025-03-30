@@ -50,9 +50,11 @@ class AppFixtures extends Fixture
 
         for ($i =0; $i < count($cards); $i++) {
             $card = new Card;
-            $card->setName($cards[$i]['name']);
+            $card->setInitialsName($cards[$i]['initials_name']);
+            $card->setFrenchName($cards[$i]['french_name']);
+            $card->setEnglishName($cards[$i]['english_name']);
             $card->setHeightId($cards[$i]['height_id']);
-            $card->setImageUrl("https://websworld.fr/images/card_".$cards[$i]['name']);
+            $card->setImageUrl("https://websworld.fr/images/card_".$cards[$i]['initials_name']);
             $manager->persist($card);
         }
 

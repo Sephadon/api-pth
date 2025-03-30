@@ -1,53 +1,53 @@
-id;name;height_id
-0;2d;100
-1;3d;101
-2;4d;102
-3;5d;103
-4;6d;104
-5;7d;105
-6;8d;106
-7;9d;107
-8;10d;108
-9;jd;109
-10;qd;110
-11;kd;111
-12;ad;112
-13;2h;100
-14;3h;101
-15;4h;102
-16;5h;103
-17;6h;104
-18;7h;105
-19;8h;106
-20;9h;107
-21;10h;108
-22;jh;109
-23;qh;110
-24;kh;111
-25;ah;112
-26;2s;100
-27;3s;101
-28;4s;102
-29;5s;103
-30;6s;104
-31;7s;105
-32;8s;106
-33;9s;107
-34;10s;108
-35;js;109
-36;qs;110
-37;ks;111
-38;as;112
-39;2t;100
-40;3t;101
-41;4t;102
-42;5t;103
-43;6t;104
-44;7t;105
-45;8t;106
-46;9t;107
-47;10t;108
-48;jt;109
-49;qt;110
-50;kt;111
-51;at;112
+id;initials_name;french_name;english_name;height_id
+0;2d;Deux de carreau;Two of diamonds;100
+1;3d;Trois de carreau;Three of diamonds;101
+2;4d;Quatre de carreau;Four of diamonds;102
+3;5d;Cinq de carreau;Five of diamonds;103
+4;6d;Six de carreau;Six of diamonds;104
+5;7d;Sept de carreau;Seven of diamonds;105
+6;8d;Huit de carreau;Eight of diamonds;106
+7;9d;Neuf de carreau;Nine of diamonds;107
+8;10d;Dix de carreau;Ten of diamonds;108
+9;jd;Valet de carreau;Jack of diamonds;109
+10;qd;Dame de carreau;Queen of diamonds;110
+11;kd;Roi de carreau;King of diamonds;111
+12;ad;As de carreau;Ace of diamonds;112
+13;2h;Deux de coeur;Two of hearts;100
+14;3h;Trois de coeur;Three of hearts;101
+15;4h;Quatre de coeur;Four of hearts;102
+16;5h;Cinq de coeur;Five of hearts;103
+17;6h;Six de coeur;Six of hearts;104
+18;7h;Sept de coeur;Seven of hearts;105
+19;8h;Huit de coeur;Eight of hearts;106
+20;9h;Neuf de coeur;Nine of hearts;107
+21;10h;Dix de coeur;Ten of hearts;108
+22;jh;Valet de coeur;Jack of hearts;109
+23;qh;Dame de coeur;Queen of hearts;110
+24;kh;Roi de coeur;King of hearts;111
+25;ah;As de coeur;Ace of hearts;112
+26;2s;Deux de pique;Two of spades;100
+27;3s;Trois de pique;Three of spades;101
+28;4s;Quatre de pique;Four of spades;102
+29;5s;Cinq de pique;Five of spades;103
+30;6s;Six de pique;Six of spades;104
+31;7s;Sept de pique;Seven of spades;105
+32;8s;Huit de pique;Eight of spades;106
+33;9s;Neuf de pique;Nine of spades;107
+34;10s;Dix de pique;Ten of spades;108
+35;js;Valet de pique;Jack of spades;109
+36;qs;Dame de pique;Queen of spades;110
+37;ks;Roi de pique;King of spades;111
+38;as;As de pique;Ace of spades;112
+39;2c;Deux de trèfle;Two of clubs;100
+40;3c;Trois de trèfle;Three of clubs;101
+41;4c;Quatre de trèfle;Four of clubs;102
+42;5c;Cinq de trèfle;Five of clubs;103
+43;6c;Six de trèfle;Six of clubs;104
+44;7c;Sept de trèfle;Seven of clubs;105
+45;8c;Huit de trèfle;Eight of clubs;106
+46;9c;Neuf de trèfle;Nine of clubs;107
+47;10c;Dix de trèfle;Ten of clubs;108
+48;jc;Valet de trèfle;Jack of clubs;109
+49;qc;Dame de trèfle;Queen of clubs;110
+50;kc;Roi de trèfle;King of clubs;111
+51;ac;As de trèfle;Ace of clubs;112

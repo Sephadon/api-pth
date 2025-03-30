@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\CardRepository;
 use App\Service\DealTheCards;
+use App\Entity\Card;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -15,10 +16,15 @@ use Symfony\Component\RateLimiter\RateLimiterFactory;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
+use Nelmio\ApiDocBundle\Attribute\Model;
+use Nelmio\ApiDocBundle\Attribute\Security;
+use OpenApi\Attributes as OA;
+
 class CardController extends AbstractController
 {
-    // Retrieve all cards
-    #[Route('/api-pth/cards', name: 'card', methods: ['GET'])]
+    // Récupérer les 52 cartes
+    #[OA\Tag(name: 'Cards', description: 'Collect all the cards')]
+    #[Route('/api/cards', name: 'card', methods: ['GET'])]
     public function getCards(Request $request, RateLimiterFactory $anonymousApiLimiter, CardRepository $cardRepository, SerializerInterface $serializer): JsonResponse
     {
         $limiter = $anonymousApiLimiter->create($request->getClientIp());
@@ -31,8 +37,25 @@ class CardController extends AbstractController
         return new JsonResponse($jsonCardList, Response::HTTP_OK, [], true);
     }
 
-    // Retrieve a set
-    #[Route('/api-pth/game/{nbrPlayers}', name: 'game', methods: ['GET'])]
+    
+    // Récupérer une donne    
+    #[Route('/api/game/{nbrPlayers}', name: 'game', methods: ['GET'])]
+    #[OA\Response(
+        response: 200,
+        description: 'Returns a deal according to the number of players',
+        content: new OA\JsonContent(
+            type: 'array',
+            items: new OA\Items(ref: new Model(type: Card::class))
+        )
+    )]
+    #[OA\Parameter(
+        name: 'nbrPlayers',
+        in: 'path',
+        description: 'Enter the number of players',
+        required: true,
+        schema: new OA\Schema(type: 'integer')
+    )]
+    #[OA\Tag(name: 'Game', description: 'Collect a deal according to the number of players')]
     public function game(Request $request, RateLimiterFactory $anonymousApiLimiter, int $nbrPlayers,CardRepository $cardRepository, SerializerInterface $serializer): JsonResponse
     {
         $limiter = $anonymousApiLimiter->create($request->getClientIp());
@@ -41,7 +64,9 @@ class CardController extends AbstractController
         }
 
         if ($nbrPlayers < 2 || $nbrPlayers > 6) {
-            throw new HttpException(JsonResponse::HTTP_BAD_REQUEST, "Le nombre de joueurs doit être compris entre 2 et 6");
+            throw new HttpException(JsonResponse::HTTP_BAD_REQUEST, "Le nombre de joueurs doit être supérieur ou égale à 2 et inférieur ou égale à 6");
+        } elseif (!is_int($nbrPlayers)) {
+            throw new HttpException(JsonResponse::HTTP_BAD_REQUEST, "La valeur doit être un entier supérieur ou égale à 2 et inférieur ou égale à 6");
         }
 
         $cardsList = $cardRepository->findAll();

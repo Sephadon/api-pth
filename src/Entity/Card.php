@@ -14,7 +14,13 @@ class Card
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $initialsName = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $frenchName = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $englishName = null;
 
     #[ORM\Column]
     private ?int $heightId = null;
@@ -27,14 +33,35 @@ class Card
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getInitialsName(): ?string
     {
-        return $this->name;
+        return $this->initialsName;
+    }
+    public function setInitialsName(string $initialsName): static
+    {
+        $this->initialsName = $initialsName;
+
+        return $this;
     }
 
-    public function setName(string $name): static
+    public function getFrenchName(): ?string
     {
-        $this->name = $name;
+        return $this->frenchName;
+    }
+    public function setFrenchName(string $frenchName): static
+    {
+        $this->frenchName = $frenchName;
+
+        return $this;
+    }
+
+    public function getEnglishName(): ?string
+    {
+        return $this->englishName;
+    }
+    public function setEnglishName(string $englishName): static
+    {
+        $this->englishName = $englishName;
 
         return $this;
     }
@@ -43,7 +70,6 @@ class Card
     {
         return $this->heightId;
     }
-
     public function setHeightId(int $heightId): static
     {
         $this->heightId = $heightId;
@@ -55,7 +81,7 @@ class Card
     {
         return $this->imageUrl;
     }
-
+    
     public function setImageUrl(string $imageUrl): static
     {
         $this->imageUrl = $imageUrl;
